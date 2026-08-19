@@ -68,7 +68,12 @@ contact: 'training@researchcomputing.ncl.ac.uk'
 # Order of episodes in your lesson
 episodes: 
 - introduction.md
-
+- setup_device.md
+- configure_device.md
+- connecting.md
+- data-transfer.md
+- bigger_networks.md
+- troubleshooting.md
 
 # Information for Learners
 learners: 
