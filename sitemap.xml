@@ -1,51 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/404.html</loc>
+    <loc>https://NewcastleRSE-Training.github.io/networking-intro/404.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/CODE_OF_CONDUCT.html</loc>
+    <loc>https://NewcastleRSE-Training.github.io/networking-intro/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/LICENSE.html</loc>
+    <loc>https://NewcastleRSE-Training.github.io/networking-intro/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/citation.html</loc>
+    <loc>https://NewcastleRSE-Training.github.io/networking-intro/aio.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/index.html</loc>
+    <loc>https://NewcastleRSE-Training.github.io/networking-intro/citation.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/404.html</loc>
+    <loc>https://NewcastleRSE-Training.github.io/networking-intro/images.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/CODE_OF_CONDUCT.html</loc>
+    <loc>https://NewcastleRSE-Training.github.io/networking-intro/index.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/LICENSE.html</loc>
+    <loc>https://NewcastleRSE-Training.github.io/networking-intro/instructor/404.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/citation.html</loc>
+    <loc>https://NewcastleRSE-Training.github.io/networking-intro/instructor/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/index.html</loc>
+    <loc>https://NewcastleRSE-Training.github.io/networking-intro/instructor/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/introduction.html</loc>
+    <loc>https://NewcastleRSE-Training.github.io/networking-intro/instructor/aio.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/profiles.html</loc>
+    <loc>https://NewcastleRSE-Training.github.io/networking-intro/instructor/citation.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/reference.html</loc>
+    <loc>https://NewcastleRSE-Training.github.io/networking-intro/instructor/images.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/introduction.html</loc>
+    <loc>https://NewcastleRSE-Training.github.io/networking-intro/instructor/index.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/profiles.html</loc>
+    <loc>https://NewcastleRSE-Training.github.io/networking-intro/instructor/instructor-notes.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/reference.html</loc>
+    <loc>https://NewcastleRSE-Training.github.io/networking-intro/instructor/introduction.html</loc>
+  </url>
+  <url>
+    <loc>https://NewcastleRSE-Training.github.io/networking-intro/instructor/key-points.html</loc>
+  </url>
+  <url>
+    <loc>https://NewcastleRSE-Training.github.io/networking-intro/instructor/profiles.html</loc>
+  </url>
+  <url>
+    <loc>https://NewcastleRSE-Training.github.io/networking-intro/instructor/reference.html</loc>
+  </url>
+  <url>
+    <loc>https://NewcastleRSE-Training.github.io/networking-intro/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://NewcastleRSE-Training.github.io/networking-intro/introduction.html</loc>
+  </url>
+  <url>
+    <loc>https://NewcastleRSE-Training.github.io/networking-intro/key-points.html</loc>
+  </url>
+  <url>
+    <loc>https://NewcastleRSE-Training.github.io/networking-intro/profiles.html</loc>
+  </url>
+  <url>
+    <loc>https://NewcastleRSE-Training.github.io/networking-intro/reference.html</loc>
   </url>
 </urlset>
