@@ -3,9 +3,9 @@
 This lesson uses [The Carpentries Workbench][workbench]. It is developed by the Newcastle RSE Training Team
 
 # Authors
-Carol Booth, carol.booth2@ncl.ac.uk
-Frances Turner, Frances.Hutchings@newcastle.ac.uk
-Robin Wardle, Robin.Wardle@newcastle.ac.uk
+* Carol Booth, carol.booth2@ncl.ac.uk
+* Frances Turner, Frances.Hutchings@newcastle.ac.uk
+* Robin Wardle, Robin.Wardle@newcastle.ac.uk
 
 
 1. **Annotate the repository** with site URL and topic tags:
