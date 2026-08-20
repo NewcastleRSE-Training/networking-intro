@@ -4,14 +4,14 @@ teaching: 60 # teaching time in minutes
 exercises: 10 # exercise time in minutes
 ---
 
-:::::::::::::::::::::::::::::::::::::: questions 
+:::::::::::::::::::::::::::::::::::::::::::::::::: questions
 
 - "How do network devices identify themselves and talk to each other?
 - "How can we configure our devices to be visible on a network?
 
-::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-::::::::::::::::::::::::::::::::::::: objectives
+::::::::::::::::::::::::::::::::::::::::::::::::: objectives
 
 _By the end of this episode you will be able to..._
 
@@ -20,7 +20,7 @@ _By the end of this episode you will be able to..._
 - Configure a device so that it is visible on a network
 
 
-::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Introduction
 ## Networking concepts
@@ -41,33 +41,33 @@ scnet@raspberrypi:~ $ hostname -I
 scnet@raspberrypi:~ $ hostname
 ```
 
-:::::::::::::::::::::::::::::::::::;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; challenge
+::::::::::::::::::::::::::::::::::::::::::::::::: challenge
 ## hostname
 What does the `hostname -I` command do? Try typing `hostname --help` to see the options that `hostname` takes. Can you explain the output from `hostname -I`?
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; solution
+:::::::::::::::::::::::::::::: solution
 ## Result
 `hostname -I` returns a blank line because at this point we haven't given our device an IP address.
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+:::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; callout
+::::::::::::::::::::::::::::::::::::::::::::::::::: callout
 Terminal prompt
 
 The *terminal prompt* is often initialised, in this case, as `<username>@<hostname>`, but this is not fixed and you may see other forms. The form of the terminal prompt can be set by the user in a special shell variable. Without configuration, the shell will use `#` as the prompt.
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; callout
+::::::::::::::::::::::::::::::::::::::::::::::::::: callout
 Configuring a device's hostname
 
 Instead of configuring a device's hostname manually in the shell, the Pi OS writing tool *Raspberry Pi Imager* provides the option of setting the device hostname on OS creation.
 
-It's possible for a device 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+It's possible for a device to have no hostname. By default the Raspberry Pi Imager will always assign a default hostname of `raspberrypi` if none is provided, but one can remove the hostname altogether using `hostnamectl`. In this case, the device will refer to itself as `localhost`.
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-::::::::::::::::::::::::::::::::::::: keypoints
+::::::::::::::::::::::::::::::::::::::::::::::::: keypoints
 
 - Explain how to use markdown with The Carpentries Workbench
 - Demonstrate how to include pieces of code, figures, and nested challenge blocks
 
-::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
