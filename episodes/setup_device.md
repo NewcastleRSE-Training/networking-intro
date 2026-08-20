@@ -27,6 +27,7 @@ A **networkable device** is any computing hardware containing a processor, memor
 
 ## Anatomy of a Networkable Device
 
+```
 [ 1: Ethernet Port ]   [ 2: USB Ports ]
                   |                     |
      +------------+---------------------+----+
@@ -41,6 +42,7 @@ A **networkable device** is any computing hardware containing a processor, memor
      +---+----------+--------------------+---+
          |          |                    |
 [ 5: Power ]   [ 6: Micro-HDMI ]   [ 7: MicroSD Slot ]
+```
 
 * **System on Chip (SoC) / CPU:** The central engine executing instructions.
 * **RAM (Memory):** Volatile workspace holding active network packets, OS routines, and running programs.
