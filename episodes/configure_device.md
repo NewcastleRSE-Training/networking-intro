@@ -35,10 +35,15 @@ When creating the operating system (Pi OS) image and writing this to the SD card
 We can display and manipulate the device's hostname using the `hostname` and `hostnamectl` shell commands.
 ```bash
 scnet@raspberrypi:~ $ hostname
+```
+```output
 raspberrypi
+```
+```bash
 scnet@raspberrypi:~ $ hostname -I
+```
+```output
 
-scnet@raspberrypi:~ $
 ```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::: callout
@@ -66,6 +71,8 @@ What does the `hostname -I` command do? Try typing `hostname --help` to see the 
 Generally we'd like our networked devices to all have different hostnames so they can be distinguished from each other. We can change our device's hostname using the `hostnamectl` (host name control) shell command.
 ```bash
 scnet@raspberrypi:~ $ hostnamectl
+```
+```output
  Static hostname: raspberrypi
        Icon name: computer
       Machine ID: a012d884fd9522e2cc329983ea31a790
@@ -73,23 +80,43 @@ scnet@raspberrypi:~ $ hostnamectl
 Operating System: Debian GNU/Linux 13 (trixie)
           Kernel: Linux 6.18.34@rpt-rpi-v8
     Architecture: arm64
+```
+```bash
 scnet@raspberrypi:~ $ hostnamectl hostname
+```
+```output
 raspberrypi
+```
+```bash
 scnet@raspberrypi:~ $ hostnamectl hostname frodo
+```
+```output
 ==== AUTHENTICATION FOR org.freedesktop.hostname1.set-static-hostname ====
 Authentication is required to set the statically configured local hostname, as well as the pretty hostname.
 Authenticating as: Rasperry Pi OS (scnet)
 Password:
 ==== AUTHENTICATION COMPLETE ====
+```
+```bash
 scnet@raspberrypi:~ $ hostnamectl hostname
+```
+```output
 frodo
+```
+```bash
 scnet@raspberrypi:~ $ hostnamectl hostname mynet-1
+```
+```output
 ==== AUTHENTICATION FOR org.freedesktop.hostname1.set-static-hostname ====
 Authentication is required to set the statically configured local hostname, as well as the pretty hostname.
 Authenticating as: Rasperry Pi OS (scnet)
 Password:
 ==== AUTHENTICATION COMPLETE ====
+```
+```bash
 scnet@raspberrypi:~ $ hostnamectl
+```
+```output
  Static hostname: rpi-1
        Icon name: computer
       Machine ID: a012d884fd9522e2cc329983ea31a790
@@ -97,7 +124,6 @@ scnet@raspberrypi:~ $ hostnamectl
 Operating System: Debian GNU/Linux 13 (trixie)
           Kernel: Linux 6.18.34@rpt-rpi-v8
     Architecture: arm64
-scnet@raspberrypi:~ $
 ```
 
 We'll leave the hostname of this device as `rpi-1`.
@@ -129,12 +155,18 @@ Is it possible for a device to have no hostname at all? How would you accomplish
 
 ```bash
 scnet@raspberrypi:~ $ hostnamectl hostname ""
+```
+```output
 ==== AUTHENTICATION FOR org.freedesktop.hostname1.set-static-hostname ====
 Authentication is required to set the statically configured local hostname, as well as the pretty hostname.
 Authenticating as: Rasperry Pi OS (scnet)
 Password:
 ==== AUTHENTICATION COMPLETE ====
+```
+```bash
 scnet@raspberrypi:~ $ hostnamectl hostname
+```
+```output
 localhost
 ```
 
@@ -156,6 +188,8 @@ Computer networks don't internally deal with hostnames, they require IP addresse
 
 ```bash
 scnet@rpi-1:~ $ nmcli
+```
+```output
 lo: connected (externally) to lo
         "lo"
         loopback (unknown), 00:00:00:00:00:00, sw, mtu 65536
@@ -174,7 +208,11 @@ Use "nmcli device show" to get complete information about known devices and
 "nmcli connection show" to get an overview on active connection profiles.
 
 Consult nmcli(1) and nmcli-examples(7) man pages for complete usage details.
+```
+```bash
 scnet@rpi-1:~ $ nmcli connection show
+```
+```output
 NAME                UUID                                 TYPE     DEVICE
 lo                  47a655e2-45d3-2295-9a0d-5086219e882e loopback lo
 Wired Connection 1  432de219-fa35-9023-bf52-94344db2348b ethernet --
