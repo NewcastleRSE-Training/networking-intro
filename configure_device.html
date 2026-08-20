@@ -229,7 +229,8 @@
       <div class="accordion-body">
         <ul><li><a href="#introduction">Introduction</a></li>
 <li><a href="#networking-concepts">Networking concepts</a></li>
-<li><a href="#examining-the-devices-hardware">Examining the device’s hardware</a></li>
+<li><a href="#setting-a-hostname">Setting a <code>hostname</code></a></li>
+<li><a href="#setting-an-ip-address">Setting an IP address</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -374,7 +375,8 @@ configuration</li>
 <hr class="half-width"><ul><li>IP addresses</li>
 <li>CIDR</li>
 <li>hostname</li>
-</ul></section><section><h2 class="section-heading" id="examining-the-devices-hardware">Examining the device’s hardware<a class="anchor" aria-label="anchor" href="#examining-the-devices-hardware"></a></h2>
+</ul></section><section><h2 class="section-heading" id="setting-a-hostname">Setting a <code>hostname</code>
+<a class="anchor" aria-label="anchor" href="#setting-a-hostname"></a></h2>
 <hr class="half-width"><p>When creating the operating system (Pi OS) image and writing this to
 the SD card, by default the hostname will be set to
 <code>raspberrypi</code>. This can be seen in the <em>terminal
@@ -390,7 +392,23 @@ will be <code>scnet@raspberrypi</code>.</p>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1" aria-label="code-block-1-2"></a><span class="ex">raspberrypi</span></span>
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1" aria-label="code-block-1-3"></a><span class="ex">scnet@raspberrypi:~</span> $ hostname <span class="at">-I</span></span>
 <span id="cb1-4"><a href="#cb1-4" tabindex="-1" aria-label="code-block-1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1" aria-label="code-block-1-5"></a><span class="ex">scnet@raspberrypi:~</span> $ hostname</span></code></pre>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1" aria-label="code-block-1-5"></a><span class="ex">scnet@raspberrypi:~</span> $</span></code></pre>
+</div>
+<div id="terminal-prompt" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="terminal-prompt" class="callout-inner">
+<h3 class="callout-title">Terminal prompt</h3>
+<div class="callout-content">
+<p>The <em>terminal prompt</em> is often initialised, in this case, as
+<code>&lt;username&gt;@&lt;hostname&gt;</code>, but this is not fixed
+and you may see other forms. The form of the terminal prompt can be set
+by the user in a special shell variable. Without configuration, the
+shell will use <code>#</code> as the prompt.</p>
+</div>
+</div>
 </div>
 <div id="hostname" class="callout challenge">
 <div class="callout-square">
@@ -410,9 +428,7 @@ will be <code>scnet@raspberrypi</code>.</p>
 <div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1">
-  Result
-  </h4>
+  <h4 class="accordion-header" id="headingSolution1"> Result </h4>
 </button>
 <div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
@@ -422,41 +438,174 @@ we haven’t given our device an IP address.</p>
 </div>
 </div>
 </div>
-<div id="terminal-prompt" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
+<p>Generally we’d like our networked devices to all have different
+hostnames so they can be distinguished from each other. We can change
+our device’s hostname using the <code>hostnamectl</code> (host name
+control) shell command.</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1" aria-label="code-block-2-1"></a><span class="ex">scnet@raspberrypi:~</span> $ hostnamectl</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1" aria-label="code-block-2-2"></a> <span class="ex">Static</span> hostname: raspberrypi</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1" aria-label="code-block-2-3"></a>       <span class="ex">Icon</span> name: computer</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1" aria-label="code-block-2-4"></a>      <span class="ex">Machine</span> ID: a012d884fd9522e2cc329983ea31a790</span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1" aria-label="code-block-2-5"></a>         <span class="ex">Boot</span> ID: f4201aa4e935522113f840a843b3218f</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1" aria-label="code-block-2-6"></a><span class="ex">Operating</span> System: Debian GNU/Linux 13 <span class="er">(</span><span class="ex">trixie</span><span class="kw">)</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1" aria-label="code-block-2-7"></a>          <span class="ex">Kernel:</span> Linux 6.18.34@rpt-rpi-v8</span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1" aria-label="code-block-2-8"></a>    <span class="ex">Architecture:</span> arm64</span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1" aria-label="code-block-2-9"></a><span class="ex">scnet@raspberrypi:~</span> $ hostnamectl hostname</span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1" aria-label="code-block-2-10"></a><span class="ex">raspberrypi</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1" aria-label="code-block-2-11"></a><span class="ex">scnet@raspberrypi:~</span> $ hostnamectl hostname frodo</span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1" aria-label="code-block-2-12"></a><span class="ex">====</span> AUTHENTICATION FOR org.freedesktop.hostname1.set-static-hostname ====</span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1" aria-label="code-block-2-13"></a><span class="ex">Authentication</span> is required to set the statically configured local hostname, as well as the pretty hostname.</span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1" aria-label="code-block-2-14"></a><span class="ex">Authenticating</span> as: Rasperry Pi OS <span class="er">(</span><span class="ex">scnet</span><span class="kw">)</span></span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1" aria-label="code-block-2-15"></a><span class="ex">Password:</span></span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1" aria-label="code-block-2-16"></a><span class="ex">====</span> AUTHENTICATION COMPLETE ====</span>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1" aria-label="code-block-2-17"></a><span class="ex">scnet@raspberrypi:~</span> $ hostnamectl hostname</span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1" aria-label="code-block-2-18"></a><span class="ex">frodo</span></span>
+<span id="cb2-19"><a href="#cb2-19" tabindex="-1" aria-label="code-block-2-19"></a><span class="ex">scnet@raspberrypi:~</span> $ hostnamectl hostname mynet-1</span>
+<span id="cb2-20"><a href="#cb2-20" tabindex="-1" aria-label="code-block-2-20"></a><span class="ex">====</span> AUTHENTICATION FOR org.freedesktop.hostname1.set-static-hostname ====</span>
+<span id="cb2-21"><a href="#cb2-21" tabindex="-1" aria-label="code-block-2-21"></a><span class="ex">Authentication</span> is required to set the statically configured local hostname, as well as the pretty hostname.</span>
+<span id="cb2-22"><a href="#cb2-22" tabindex="-1" aria-label="code-block-2-22"></a><span class="ex">Authenticating</span> as: Rasperry Pi OS <span class="er">(</span><span class="ex">scnet</span><span class="kw">)</span></span>
+<span id="cb2-23"><a href="#cb2-23" tabindex="-1" aria-label="code-block-2-23"></a><span class="ex">Password:</span></span>
+<span id="cb2-24"><a href="#cb2-24" tabindex="-1" aria-label="code-block-2-24"></a><span class="ex">====</span> AUTHENTICATION COMPLETE ====</span>
+<span id="cb2-25"><a href="#cb2-25" tabindex="-1" aria-label="code-block-2-25"></a><span class="ex">scnet@raspberrypi:~</span> $ hostnamectl</span>
+<span id="cb2-26"><a href="#cb2-26" tabindex="-1" aria-label="code-block-2-26"></a> <span class="ex">Static</span> hostname: rpi-1</span>
+<span id="cb2-27"><a href="#cb2-27" tabindex="-1" aria-label="code-block-2-27"></a>       <span class="ex">Icon</span> name: computer</span>
+<span id="cb2-28"><a href="#cb2-28" tabindex="-1" aria-label="code-block-2-28"></a>      <span class="ex">Machine</span> ID: a012d884fd9522e2cc329983ea31a790</span>
+<span id="cb2-29"><a href="#cb2-29" tabindex="-1" aria-label="code-block-2-29"></a>         <span class="ex">Boot</span> ID: f4201aa4e935522113f840a843b3218f</span>
+<span id="cb2-30"><a href="#cb2-30" tabindex="-1" aria-label="code-block-2-30"></a><span class="ex">Operating</span> System: Debian GNU/Linux 13 <span class="er">(</span><span class="ex">trixie</span><span class="kw">)</span></span>
+<span id="cb2-31"><a href="#cb2-31" tabindex="-1" aria-label="code-block-2-31"></a>          <span class="ex">Kernel:</span> Linux 6.18.34@rpt-rpi-v8</span>
+<span id="cb2-32"><a href="#cb2-32" tabindex="-1" aria-label="code-block-2-32"></a>    <span class="ex">Architecture:</span> arm64</span>
+<span id="cb2-33"><a href="#cb2-33" tabindex="-1" aria-label="code-block-2-33"></a><span class="ex">scnet@raspberrypi:~</span> $</span></code></pre>
 </div>
-<span class="callout-header">Callout</span>
-<div id="terminal-prompt" class="callout-inner">
-<h3 class="callout-title">Terminal prompt</h3>
+<p>We’ll leave the hostname of this device as <code>rpi-1</code>.</p>
+<div id="whats-happened-to-the-prompt" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="whats-happened-to-the-prompt" class="callout-inner">
+<h3 class="callout-title">What’s happened to the prompt?</h3>
 <div class="callout-content">
-<p>The <em>terminal prompt</em> is often initialised, in this case, as
-<code>&lt;username&gt;@&lt;hostname&gt;</code>, but this is not fixed
-and you may see other forms. The form of the terminal prompt can be set
-by the user in a special shell variable. Without configuration, the
-shell will use <code>#</code> as the prompt.</p>
+<p>Despite changing the hostname, the prompt hasn’t changed. Why is
+this?</p>
 </div>
 </div>
 </div>
-<div id="configuring-a-devices-hostname" class="callout">
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div class="accordion-body">
+<p>The prompt is set in a special shell variable on logging into a new
+shell. You can check this by either launching a new shell or logging out
+(<code>exit</code>) and back in.</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1" aria-label="code-block-3-1"></a><span class="ex">scnet@raspberrypi:~</span> $ bash</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1" aria-label="code-block-3-2"></a><span class="ex">scnet@rpi-1:~</span> $ exit</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1" aria-label="code-block-3-3"></a><span class="ex">scnet@raspberrypi:~</span> $</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="no-hostname" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="no-hostname" class="callout-inner">
+<h3 class="callout-title">No hostname?</h3>
+<div class="callout-content">
+<p>Is it possible for a device to have no hostname at all? How would you
+accomplish this?</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1" aria-label="code-block-4-1"></a><span class="ex">scnet@raspberrypi:~</span> $ hostnamectl hostname <span class="st">""</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1" aria-label="code-block-4-2"></a><span class="ex">====</span> AUTHENTICATION FOR org.freedesktop.hostname1.set-static-hostname ====</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1" aria-label="code-block-4-3"></a><span class="ex">Authentication</span> is required to set the statically configured local hostname, as well as the pretty hostname.</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1" aria-label="code-block-4-4"></a><span class="ex">Authenticating</span> as: Rasperry Pi OS <span class="er">(</span><span class="ex">scnet</span><span class="kw">)</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1" aria-label="code-block-4-5"></a><span class="ex">Password:</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1" aria-label="code-block-4-6"></a><span class="ex">====</span> AUTHENTICATION COMPLETE ====</span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1" aria-label="code-block-4-7"></a><span class="ex">scnet@raspberrypi:~</span> $ hostnamectl hostname</span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1" aria-label="code-block-4-8"></a><span class="ex">localhost</span></span></code></pre>
+</div>
+<p>It’s possible for a device to have no hostname. Note that by default
+the Raspberry Pi Imager will always assign a default hostname of
+<code>raspberrypi</code> if none is provided.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="other-hostname-facts" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <span class="callout-header">Callout</span>
-<div id="configuring-a-devices-hostname" class="callout-inner">
-<h3 class="callout-title">Configuring a device’s hostname</h3>
+<div id="other-hostname-facts" class="callout-inner">
+<h3 class="callout-title">Other <code>hostname</code> facts</h3>
 <div class="callout-content">
 <p>Instead of configuring a device’s hostname manually in the shell, the
 Pi OS writing tool <em>Raspberry Pi Imager</em> provides the option of
 setting the device hostname on OS creation.</p>
-<p>It’s possible for a device to have no hostname. By default the
-Raspberry Pi Imager will always assign a default hostname of
-<code>raspberrypi</code> if none is provided, but one can remove the
-hostname altogether using <code>hostnamectl</code>. In this case, the
-device will refer to itself as <code>localhost</code>.</p>
 </div>
 </div>
 </div>
+</section><section><h2 class="section-heading" id="setting-an-ip-address">Setting an IP address<a class="anchor" aria-label="anchor" href="#setting-an-ip-address"></a></h2>
+<hr class="half-width"><p>Computer networks don’t internally deal with hostnames, they require
+IP addresses. What is the IP address of our device? To find out we need
+to look at what network devices are present using the Network
+Manager.</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1" aria-label="code-block-5-1"></a><span class="ex">scnet@rpi-1:~</span> $ nmcli</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1" aria-label="code-block-5-2"></a><span class="ex">lo:</span> connected <span class="er">(</span><span class="ex">externally</span><span class="kw">)</span> <span class="ex">to</span> lo</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1" aria-label="code-block-5-3"></a>        <span class="st">"lo"</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1" aria-label="code-block-5-4"></a>        <span class="ex">loopback</span> <span class="er">(</span><span class="ex">unknown</span><span class="kw">)</span><span class="ex">,</span> 00:00:00:00:00:00, sw, mtu 65536</span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1" aria-label="code-block-5-5"></a>        <span class="ex">inet4</span> 127.0.0.1/8</span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1" aria-label="code-block-5-6"></a>        <span class="ex">inet6</span> ::1/128</span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1" aria-label="code-block-5-7"></a></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1" aria-label="code-block-5-8"></a><span class="ex">eth0:</span> unavailable</span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1" aria-label="code-block-5-9"></a>        <span class="st">"Microchip SMSC9512/9514"</span></span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1" aria-label="code-block-5-10"></a>        <span class="ex">ethernet</span> <span class="er">(</span><span class="ex">smsc95xx</span><span class="kw">)</span><span class="ex">,</span> B8:27:EB:BB:B1, hw, mtu 1500</span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1" aria-label="code-block-5-11"></a></span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1" aria-label="code-block-5-12"></a><span class="ex">wlan0:</span> unavailable</span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1" aria-label="code-block-5-13"></a>        <span class="st">"Broadcom BCM43438 combo and Bluetooth Low Energy"</span></span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1" aria-label="code-block-5-14"></a>        <span class="ex">wifi</span> <span class="er">(</span><span class="ex">brcmfmac</span><span class="kw">)</span><span class="ex">,</span> B8:27:EB:EE:91:E4, sw disabled, hw, mtu 1500</span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1" aria-label="code-block-5-15"></a></span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1" aria-label="code-block-5-16"></a><span class="ex">Use</span> <span class="st">"nmcli device show"</span> to get complete information about known devices and</span>
+<span id="cb5-17"><a href="#cb5-17" tabindex="-1" aria-label="code-block-5-17"></a><span class="st">"nmcli connection show"</span> to get an overview on active connection profiles.</span>
+<span id="cb5-18"><a href="#cb5-18" tabindex="-1" aria-label="code-block-5-18"></a></span>
+<span id="cb5-19"><a href="#cb5-19" tabindex="-1" aria-label="code-block-5-19"></a><span class="ex">Consult</span> nmcli<span class="er">(</span><span class="ex">1</span><span class="kw">)</span> <span class="ex">and</span> nmcli-examples<span class="er">(</span><span class="ex">7</span><span class="kw">)</span> <span class="fu">man</span> pages for complete usage details.</span>
+<span id="cb5-20"><a href="#cb5-20" tabindex="-1" aria-label="code-block-5-20"></a><span class="ex">scnet@rpi-1:~</span> $ nmcli connection show</span>
+<span id="cb5-21"><a href="#cb5-21" tabindex="-1" aria-label="code-block-5-21"></a><span class="ex">NAME</span>                UUID                                 TYPE     DEVICE</span>
+<span id="cb5-22"><a href="#cb5-22" tabindex="-1" aria-label="code-block-5-22"></a><span class="ex">lo</span>                  47a655e2-45d3-2295-9a0d-5086219e882e loopback lo</span>
+<span id="cb5-23"><a href="#cb5-23" tabindex="-1" aria-label="code-block-5-23"></a><span class="ex">Wired</span> Connection 1  432de219-fa35-9023-bf52-94344db2348b ethernet <span class="at">--</span></span></code></pre>
+</div>
+<p>What does <code>nmcli device show</code> produce?</p>
+<p><code>nmcli</code> tells us that we have an Ethernet device,
+<code>eth0</code>, and a wireless device, <code>wlan0</code>. There’s
+another device, <code>lo</code>, which is the <em>loopback device</em>,
+a virtual network interface which the computer uses to talk to itself.
+We can see that presently neither the ethernet nor the wireless devices
+have an IP address, i.e. they are not configured for networking.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
