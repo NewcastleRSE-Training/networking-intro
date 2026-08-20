@@ -149,6 +149,29 @@ Standard User (pi): Can create files in their own home directory (/home/pi), run
 Superuser (root): The absolute administrator who can change IP assignments, start/stop network daemons, edit firewall rules, and install system packages.
 sudo (SuperUser DO): A prefix placed before a command granting temporary root privileges to authorized users (e.g., sudo apt update).
 
+:::::::::::::::::::::::::::::::::::::: callout
+
+Principle of Least Privilege
+In networking, running services as root is dangerous. If an attacker exploits a bug in a network program running with standard permissions, their access remains sandboxed. If the compromised service was running with sudo/root, the attacker gains full control over the machine.
+::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::: challenge
+
+#### Privilege Check
+Which of the following actions require sudo privileges?
+Checking your current IP address using ip addr.
+Editing the system hosts file at /etc/hosts.
+Creating a new text file called notes.txt in your home folder (~/).
+Restarting the system networking service with systemctl restart networking.
+
+::: solution
+1. No sudo: Viewing network configuration is a read-only action.
+2. Requires sudo: /etc/ contains global system configuration files writeable only by root.
+3. No sudo: You have full ownership of your user home directory.
+4. Requires sudo: Starting, stopping, or restarting core system services affects the entire device and requires administrative rights.
+:::
+:::::::::::::::::::::::::::::::::::::::::::::::
+
 ::::::::::::::::::::::::::::::::::::: keypoints
 
 - Explain how to use markdown with The Carpentries Workbench
