@@ -42,26 +42,36 @@ scnet@raspberrypi:~ $ hostname
 ```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::: challenge
+
 ## hostname
 What does the `hostname -I` command do? Try typing `hostname --help` to see the options that `hostname` takes. Can you explain the output from `hostname -I`?
+
 :::::::::::::::::::::::::::::: solution
+
 ## Result
 `hostname -I` returns a blank line because at this point we haven't given our device an IP address.
+
 :::::::::::::::::::::::::::::::::::::::
+
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
+
 ::::::::::::::::::::::::::::::::::::::::::::::::::: callout
-Terminal prompt
+
+## Terminal prompt
 
 The *terminal prompt* is often initialised, in this case, as `<username>@<hostname>`, but this is not fixed and you may see other forms. The form of the terminal prompt can be set by the user in a special shell variable. Without configuration, the shell will use `#` as the prompt.
+
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::: callout
-Configuring a device's hostname
+
+## Configuring a device's hostname
 
 Instead of configuring a device's hostname manually in the shell, the Pi OS writing tool *Raspberry Pi Imager* provides the option of setting the device hostname on OS creation.
 
 It's possible for a device to have no hostname. By default the Raspberry Pi Imager will always assign a default hostname of `raspberrypi` if none is provided, but one can remove the hostname altogether using `hostnamectl`. In this case, the device will refer to itself as `localhost`.
+
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
