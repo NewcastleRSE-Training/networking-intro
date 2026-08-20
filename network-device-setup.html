@@ -337,7 +337,45 @@ Workshop.</p>
 <p>Insert the SD card which will contain the Pi OS image into the SD
 card slot on the Linux computer. Open the Imager tool and select the
 Raspberry Pi hardware that’s being used. <img src="fig/imager-process-01.png" alt="Imager step 1" class="figure">(“alt=Select a
+target Raspberry Pi device”) <img src="fig/imager-process-02.png" alt="Imager step 1" class="figure">(“alt=Select a target Raspberry Pi device”)</p>
+<p>Choose an operating system. This lesson will use a version of Pi OS
+without the Gnome desktop environment - scroll down to “Raspberry Pi OS
+(other)” and select that. <img src="fig/imager-process-03.png" alt="Imager step 1" class="figure">(“alt=Select a target Raspberry Pi device”)</p>
+<p>Choose “Raspberry Pi OS Lite (64-bit)”. <img src="fig/imager-process-04.png" alt="Imager step 1" class="figure">(“alt=Select a
 target Raspberry Pi device”)</p>
+<p>Select the storage device to write the OS image to. It’s safest to
+select the “Exclude system drives” checkbox to avoid accidentally
+selecting system drives on the host computer. If you haven’t inserted
+the SD card into the SD card slot, then do it here. <img src="fig/imager-process-05.png" alt="Imager step 1" class="figure">(“alt=Select a
+target Raspberry Pi device”)</p>
+<p>Leave the hostname box blank. The lesson learners will be configuring
+this. <img src="fig/imager-process-06.png" alt="Imager step 1" class="figure">(“alt=Select a target Raspberry Pi device”)</p>
+<p>Choose appropriate localisation parameters. <img src="fig/imager-process-07.png" alt="Imager step 1" class="figure">(“alt=Select a
+target Raspberry Pi device”)</p>
+<p>Choose a username for the device. This can be anything, but this
+lesson uses <code>scnet</code> so it’s suggested that you use this. Use
+<code>scnet</code> as the password too. <img src="fig/imager-process-08.png" alt="Imager step 1" class="figure">(“alt=Select a
+target Raspberry Pi device”)</p>
+<p>Leave the SSID box blank. This is likely to be auto-completed with
+the SSID of the network the host computer is attached to, so delete this
+if it is. <img src="fig/imager-process-09.png" alt="Imager step 1" class="figure">(“alt=Select a target Raspberry Pi device”)</p>
+<p>Enable SSH and choose “Use password authentication”. This lesson
+won’t use SSH key pairs. <img src="fig/imager-process-10.png" alt="Imager step 1" class="figure">(“alt=Select a target Raspberry Pi device”)</p>
+<p>Don’t enable Raspberry Pi Connect. <img src="fig/imager-process-11.png" alt="Imager step 1" class="figure">(“alt=Select a
+target Raspberry Pi device”)</p>
+<p>At this stage we’re ready to write the image. Select “Write”. <img src="fig/imager-process-12.png" alt="Imager step 1" class="figure">(“alt=Select a
+target Raspberry Pi device”)</p>
+<p>Imager will issue a final warning now that you’re about to overwrite
+the SD card. Select “I UNDERSTAND, ERASE AND WRITE”. <img src="fig/imager-process-13.png" alt="Imager step 1" class="figure">(“alt=Select a
+target Raspberry Pi device”)</p>
+<p>Wait until the write is completed. <img src="fig/imager-process-14.png" alt="Imager step 1" class="figure">(“alt=Select a
+target Raspberry Pi device”) <img src="fig/imager-process-15.png" alt="Imager step 1" class="figure">(“alt=Select a target Raspberry Pi device”)</p>
+<p>When the Imager tool completes the Pi-Os writing and validation step
+it will show a completion screen with details of the completed task.
+From here you can choose to write another SD card, or quit the
+application. Imager saves the configuration so upon re-opening the tool
+another SD card image can be written without going through this setup
+again. <img src="fig/imager-process-16.png" alt="Imager step 15" class="figure">(“alt=Select a target Raspberry Pi device”)</p>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
