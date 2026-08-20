@@ -116,14 +116,30 @@ Connecting peripherals establishes communication buses between external input/ou
 
 ## First Login and Permission Levels
 
-Once booted, the display presents a terminal console or graphical desktop prompting for credentials.
+Once the device has booted up, the display presents a terminal console or graphical desktop prompting for credentials. Sometimes the kernel continues writing boot-up messages to the terminal after displaying the login prompt, in which case just press "return" to re-display the login prompt. You should see something like the following
 
 ```bash
-Raspberry Pi OS (GNU/Linux)
-raspberrypi login: pi
+Debian GNU/Linux 13 raspberrypi tty1
+
+My IP address is 127.0.1.1 ::ffff:127.0.1.1
+
+raspberrypi login: scnet
+```
+
+Enter your login information as provided by the lesson instructor (most probably scnet/scnet).
+
+```
+raspberrypi login: scnet
 Password: 
-Linux raspberrypi 6.1.0 #1 SMP Debian
-pi@raspberrypi:~ $
+Linux raspberrypi 6.18.34+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.18.34-1+rpt1 (2026-06-09) aarch64
+
+The program inclued with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted be applicable law.
+scnet@raspberrypi:~ $
 ```
 
 ## Standard User vs. Superuser (sudo)
