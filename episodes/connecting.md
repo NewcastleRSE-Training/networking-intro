@@ -6,10 +6,9 @@ exercises: 2 # exercise time in minutes
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- what is a networkable device?
-- what are the essential components of a networkable device?
-- how do we interact with it?
-- how can we connect up peripherals and logging in
+ - how are devices connected together into a network
+ - how can we check that a device is properly connected?
+ - how can we interact with a device via the network?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -17,10 +16,11 @@ exercises: 2 # exercise time in minutes
 
 _By the end of this episode, learners should be able to..._
 
-- create an IP address network between two devices :heavy_check_mark: (Authentic)
-- test a network connection using ping :heavy_check_mark: multi choice
-- create a network between two devices using hostnames :heavy_check_mark: (Authentic)
-- connect to a console on a remote device using ssh :heavy_check_mark: Multi-choice
+- create an IP address network between two devices
+- use the /etc/hosts file to connect using hostnames 
+- test a network connection using ping 
+- create a network between two devices using hostnames 
+- connect to a console on a remote device using ssh 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -46,7 +46,7 @@ a hint here
 :::::::::
 
 :::: solution
-the answe
+the answer
 :::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
