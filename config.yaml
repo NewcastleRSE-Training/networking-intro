@@ -81,6 +81,9 @@ learners:
 # Information for Instructors
 instructors: 
 
+- instructor-notes.md
+- lesson_design_notes.md
+
 # Learner Profiles
 profiles: 
 
