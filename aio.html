@@ -452,7 +452,7 @@ reinforce the objectives.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Output </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -481,7 +481,7 @@ challenge blocks?</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>You can add a line with at least three colons and a
 <code>solution</code> tag.</p>
@@ -646,7 +646,7 @@ component name from the word bank below.</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1"> Give me a hint </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
 <div class="accordion-body">
 <p>The word bank contains more terms than needed.</p>
 </div>
@@ -675,7 +675,7 @@ VGA Port * RAM * USB 2.0/3.0 Ports * Screen * Power Source</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>Storage - necessary</li>
@@ -818,7 +818,7 @@ restart networking.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>No sudo: Viewing network configuration is a read-only action.</li>
@@ -868,8 +868,9 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>How do you write a lesson using Markdown and
-<a href="https://carpentries.github.io/sandpaper/" class="external-link">sandpaper</a>?</li>
+<li>“How do network devices identify themselves and talk to each
+other?</li>
+<li>“How can we configure our devices to be visible on a network?</li>
 </ul>
 </div>
 </div>
@@ -880,9 +881,10 @@ any links that you are not going to use.
 <h3 class="card-title">Objectives</h3>
 <p><em>By the end of this episode you will be able to…</em></p>
 <ul>
-<li>Explain how to use markdown with The Carpentries Workbench</li>
-<li>Demonstrate how to include pieces of code, figures, and nested
-challenge blocks</li>
+<li>Explain some principles of computer networking</li>
+<li>Use appropriate tools to examine a device’s networking
+configuration</li>
+<li>Configure a device so that it is visible on a network</li>
 </ul>
 </div>
 </div>
@@ -891,7 +893,86 @@ challenge blocks</li>
 </div>
 <section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
+<hr class="half-width"></section><section><h2 class="section-heading" id="networking-concepts">Networking concepts<a class="anchor" aria-label="anchor" href="#networking-concepts"></a>
+</h2>
 <hr class="half-width">
+<ul>
+<li>IP addresses</li>
+<li>CIDR</li>
+<li>hostname</li>
+</ul></section><section><h2 class="section-heading" id="examining-the-devices-hardware">Examining the device’s hardware<a class="anchor" aria-label="anchor" href="#examining-the-devices-hardware"></a>
+</h2>
+<hr class="half-width">
+<p>When creating the operating system (Pi OS) image and writing this to
+the SD card, by default the hostname will be set to
+<code>raspberrypi</code>. This can be seen in the <em>terminal
+prompt</em> which has the form
+<code>&lt;username&gt;@&lt;hostname&gt;</code>, which for our devices
+will be <code>scnet@raspberrypi</code>.</p>
+<p>We can display and manipulate the device’s hostname using the
+<code>hostname</code> and <code>hostnamectl</code> shell commands.</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="ex">scnet@raspberrypi:~</span> $ hostname</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1" aria-label="code-block-1-2"></a><span class="ex">raspberrypi</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1" aria-label="code-block-1-3"></a><span class="ex">scnet@raspberrypi:~</span> $ hostname <span class="at">-I</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1" aria-label="code-block-1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1" aria-label="code-block-1-5"></a><span class="ex">scnet@raspberrypi:~</span> $ hostname</span></code></pre>
+</div>
+<div id="hostname" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<span class="callout-header">Discussion</span>
+<div id="hostname" class="callout-inner">
+<h3 class="callout-title">hostname</h3>
+<div class="callout-content">
+<p>What does the <code>hostname -I</code> command do? Try typing
+<code>hostname --help</code> to see the options that
+<code>hostname</code> takes. Can you explain the output from
+<code>hostname -I</code>? :::::::::::::::::::::::::::::: solution ##
+Result <code>hostname -I</code> returns a blank line because at this
+point we haven’t given our device an IP address.</p>
+</div>
+</div>
+</div>
+<p>:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::</p>
+<div id="callout1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>Terminal prompt</p>
+<p>The <em>terminal prompt</em> is often initialised, in this case, as
+<code>&lt;username&gt;@&lt;hostname&gt;</code>, but this is not fixed
+and you may see other forms. The form of the terminal prompt can be set
+by the user in a special shell variable. Without configuration, the
+shell will use <code>#</code> as the prompt.</p>
+</div>
+</div>
+</div>
+<div id="callout2" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>Configuring a device’s hostname</p>
+<p>Instead of configuring a device’s hostname manually in the shell, the
+Pi OS writing tool <em>Raspberry Pi Imager</em> provides the option of
+setting the device hostname on OS creation.</p>
+<p>It’s possible for a device to have no hostname. By default the
+Raspberry Pi Imager will always assign a default hostname of
+<code>raspberrypi</code> if none is provided, but one can remove the
+hostname altogether using <code>hostnamectl</code>. In this case, the
+device will refer to itself as <code>localhost</code>.</p>
+</div>
+</div>
+</div>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -1013,7 +1094,7 @@ with</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1"> Give me a hint </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
 <div class="accordion-body">
 <p>a hint here</p>
 </div>
@@ -1025,7 +1106,7 @@ with</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>the answer</p>
 </div>
