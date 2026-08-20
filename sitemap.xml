@@ -13,7 +13,19 @@
     <loc>https://NewcastleRSE-Training.github.io/networking-intro/aio.html</loc>
   </url>
   <url>
+    <loc>https://NewcastleRSE-Training.github.io/networking-intro/bigger_networks.html</loc>
+  </url>
+  <url>
     <loc>https://NewcastleRSE-Training.github.io/networking-intro/citation.html</loc>
+  </url>
+  <url>
+    <loc>https://NewcastleRSE-Training.github.io/networking-intro/configure_device.html</loc>
+  </url>
+  <url>
+    <loc>https://NewcastleRSE-Training.github.io/networking-intro/connecting.html</loc>
+  </url>
+  <url>
+    <loc>https://NewcastleRSE-Training.github.io/networking-intro/data-transfer.html</loc>
   </url>
   <url>
     <loc>https://NewcastleRSE-Training.github.io/networking-intro/images.html</loc>
@@ -34,7 +46,19 @@
     <loc>https://NewcastleRSE-Training.github.io/networking-intro/instructor/aio.html</loc>
   </url>
   <url>
+    <loc>https://NewcastleRSE-Training.github.io/networking-intro/instructor/bigger_networks.html</loc>
+  </url>
+  <url>
     <loc>https://NewcastleRSE-Training.github.io/networking-intro/instructor/citation.html</loc>
+  </url>
+  <url>
+    <loc>https://NewcastleRSE-Training.github.io/networking-intro/instructor/configure_device.html</loc>
+  </url>
+  <url>
+    <loc>https://NewcastleRSE-Training.github.io/networking-intro/instructor/connecting.html</loc>
+  </url>
+  <url>
+    <loc>https://NewcastleRSE-Training.github.io/networking-intro/instructor/data-transfer.html</loc>
   </url>
   <url>
     <loc>https://NewcastleRSE-Training.github.io/networking-intro/instructor/images.html</loc>
@@ -58,6 +82,12 @@
     <loc>https://NewcastleRSE-Training.github.io/networking-intro/instructor/reference.html</loc>
   </url>
   <url>
+    <loc>https://NewcastleRSE-Training.github.io/networking-intro/instructor/setup_device.html</loc>
+  </url>
+  <url>
+    <loc>https://NewcastleRSE-Training.github.io/networking-intro/instructor/troubleshooting.html</loc>
+  </url>
+  <url>
     <loc>https://NewcastleRSE-Training.github.io/networking-intro/instructor-notes.html</loc>
   </url>
   <url>
@@ -71,5 +101,11 @@
   </url>
   <url>
     <loc>https://NewcastleRSE-Training.github.io/networking-intro/reference.html</loc>
+  </url>
+  <url>
+    <loc>https://NewcastleRSE-Training.github.io/networking-intro/setup_device.html</loc>
+  </url>
+  <url>
+    <loc>https://NewcastleRSE-Training.github.io/networking-intro/troubleshooting.html</loc>
   </url>
 </urlset>
