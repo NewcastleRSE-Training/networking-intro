@@ -14,5 +14,10 @@ After following this lesson, learners will be able to:
 * Use ssh to open a terminal on another device on the same network
 * transfer data from one device to another using shell command scp
 
-[workbench]: https://carpentries.github.io/sandpaper-docs
+:::::::::::::::::::::::::::::::::::::::: prereq
+List of pre-requisite knowledge for this lesson:
 
+* Be comfortable working with unix shell 
+* Have a basic understanding of file management 
+* a facility with computer and lab hardware and devices
+::::::::::::::::::::::::::::::::::::::::::::::
