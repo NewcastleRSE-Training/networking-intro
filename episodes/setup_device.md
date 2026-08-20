@@ -123,6 +123,7 @@ raspberrypi login: pi
 Password: 
 Linux raspberrypi 6.1.0 #1 SMP Debian
 pi@raspberrypi:~ $
+```
 
 ## Standard User vs. Superuser (sudo)
 
