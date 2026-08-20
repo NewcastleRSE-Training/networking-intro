@@ -1,5 +1,5 @@
 ---
-title: "Using Markdown"
+title: "Setting up a Networkable Device"
 teaching: 10 # teaching time in minutes
 exercises: 2 # exercise time in minutes
 ---
