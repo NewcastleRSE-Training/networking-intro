@@ -274,7 +274,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="connecting.html">4. Using Markdown</a>
+        <a href="connecting.html">4. Connecting Devices in a Network</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -765,17 +765,34 @@ RAM.</li>
 <hr></section><section><h2 class="section-heading" id="first-login-and-permission-levels">First Login and Permission Levels<a class="anchor" aria-label="anchor" href="#first-login-and-permission-levels"></a>
 </h2>
 <hr class="half-width">
-<p>Once booted, the display presents a terminal console or graphical
-desktop prompting for credentials.</p>
+<p>Once the device has booted up, the display presents a terminal
+console or graphical desktop prompting for credentials. Sometimes the
+kernel continues writing boot-up messages to the terminal after
+displaying the login prompt, in which case just press “return” to
+re-display the login prompt. You should see something like the
+following</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="ex">Raspberry</span> Pi OS <span class="er">(</span><span class="ex">GNU/Linux</span><span class="kw">)</span></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1" aria-label="code-block-1-2"></a><span class="ex">raspberrypi</span> login: pi</span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1" aria-label="code-block-1-3"></a><span class="ex">Password:</span> </span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1" aria-label="code-block-1-4"></a><span class="ex">Linux</span> raspberrypi 6.1.0 <span class="co">#1 SMP Debian</span></span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1" aria-label="code-block-1-5"></a><span class="ex">pi@raspberrypi:~</span> $</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="ex">Debian</span> GNU/Linux 13 raspberrypi tty1</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1" aria-label="code-block-1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1" aria-label="code-block-1-3"></a><span class="ex">My</span> IP address is 127.0.1.1 ::ffff:127.0.1.1</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1" aria-label="code-block-1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1" aria-label="code-block-1-5"></a><span class="ex">raspberrypi</span> login: scnet</span></code></pre>
 </div>
+<p>Enter your login information as provided by the lesson instructor
+(most probably scnet/scnet).</p>
+<pre><code>raspberrypi login: scnet
+Password:
+Linux raspberrypi 6.18.34+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.18.34-1+rpt1 (2026-06-09) aarch64
+
+The program inclued with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted be applicable law.
+scnet@raspberrypi:~ $</code></pre>
 </section><section><h2 class="section-heading" id="standard-user-vs--superuser-sudo">Standard User vs. Superuser (sudo)<a class="anchor" aria-label="anchor" href="#standard-user-vs--superuser-sudo"></a>
 </h2>
 <hr class="half-width">
@@ -918,12 +935,12 @@ challenge blocks</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</section></section><section id="aio-connecting"><p>Content from <a href="connecting.html">Using Markdown</a></p>
+</section></section><section id="aio-connecting"><p>Content from <a href="connecting.html">Connecting Devices in a Network</a></p>
 <hr>
 <p>Last updated on 2026-08-20 |
 
         <a href="https://github.com/NewcastleRSE-Training/networking-intro/edit/main/episodes/connecting.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 60 minutes</p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -962,6 +979,47 @@ any links that you are not going to use.
 <section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
 <hr class="half-width">
+<div class="section level3">
+<h3 id="connect-your-devices-via-ip-address">connect your devices via ip address<a class="anchor" aria-label="anchor" href="#connect-your-devices-via-ip-address"></a>
+</h3>
+<p>We have 2 devices which are capable of talking to each other over a
+network Next we physically connect them. The simplest way to do this is
+using a network cable between the devices.</p>
+</div>
+<div class="section level3">
+<h3 id="test-the-connection-with-ping">test the connection with ping<a class="anchor" aria-label="anchor" href="#test-the-connection-with-ping"></a>
+</h3>
+<p>We know the IP addresses of each device because we set them in the
+last episode. Check the ip address of the device you are logged in on
+with</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="fu">hostname</span> <span class="at">-I</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1" aria-label="code-block-1-2"></a><span class="kw">```</span><span class="ex">output</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1" aria-label="code-block-1-3"></a><span class="ex">192.168.0.2</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1" aria-label="code-block-1-4"></a><span class="kw">```</span>error</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1" aria-label="code-block-1-5"></a><span class="ex">just</span> checking</span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="configure-a-hostname">configure a hostname<a class="anchor" aria-label="anchor" href="#configure-a-hostname"></a>
+</h3>
+</div>
+<div class="section level3">
+<h3 id="edit-etchosts">edit etc/hosts<a class="anchor" aria-label="anchor" href="#edit-etchosts"></a>
+</h3>
+</div>
+<div class="section level3">
+<h3 id="connect-via-hostname">connect via hostname<a class="anchor" aria-label="anchor" href="#connect-via-hostname"></a>
+</h3>
+<div class="section level4">
+<h4 id="test-that-connection-with-ping">test that connection with ping<a class="anchor" aria-label="anchor" href="#test-that-connection-with-ping"></a>
+</h4>
+</div>
+<div class="section level4">
+<h4 id="test-that-connection-with-ssh">test that connection with ssh<a class="anchor" aria-label="anchor" href="#test-that-connection-with-ssh"></a>
+</h4>
 <div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
@@ -983,7 +1041,7 @@ bottom part of instructor notes for the lesson.</p>
 <div id="exercise-title" class="callout-inner">
 <h3 class="callout-title">Exercise Title</h3>
 <div class="callout-content">
-<p>exercise</p>
+
 </div>
 </div>
 </div>
@@ -1011,6 +1069,22 @@ bottom part of instructor notes for the lesson.</p>
 </div>
 </div>
 </div>
+<p>Objective: test a network connection using ping Multichoice:</p>
+<p>Have a list of commands with their outputs Ask participants to choose
+the right one for using ping to test a connection The right one must
+show a successful connection Objective: create a network between two
+devices using hostnames Authentic Assessment:</p>
+<p>ask the participants to connect their devices using hostnames then
+test that this has worked with ping Objective: connect to a console on a
+remote device using ssh Multi choice:</p>
+<p>choose the correct ssh command from a list of possible commands ssh
+<a href="mailto:user@192.168.0.2" class="email">user@192.168.0.2</a> scp
+<a href="mailto:user@192.168.0.2" class="email">user@192.168.0.2</a> ssh
+hostname ssh user -ip=192.168.0.2 Objective: create an IP address
+network between two devices Authentic Assessment:</p>
+<p>We have pinged with IP then connected with hostname, and shown ssh
+How would you connect with ssh using the IP address? Switch to IP
+connection and try ssh-ing</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -1028,6 +1102,8 @@ bottom part of instructor notes for the lesson.</p>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
+</div>
+</div>
 </section></section><section id="aio-data-transfer"><p>Content from <a href="data-transfer.html">Using Markdown</a></p>
 <hr>
 <p>Last updated on 2026-08-20 |
