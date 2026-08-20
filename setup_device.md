@@ -78,11 +78,8 @@ The word bank contains more terms than needed.
 * Screen
 * Power Source
 
-::::: instructor
-*(Tip for instructors: For an interactive web-based drag-and-drop version, embed an [H5P Image Hotspot / Drag the Words](https://h5p.org/) activity into your built site.)*
-:::::::::::::::
 
-::::::::::::::::::::::::::::::::::::::: solution
+::::::: solution
 1. Storage - necessary
 2. Processing Unit (CPU) - necessary
 3. Network Interface - necessary
@@ -92,9 +89,13 @@ The word bank contains more terms than needed.
 7. Power Cable - unnecessary if there is internal power
 8. Screen - unnecessary
 
-::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::: instructor
+*(Tip for instructors: For an interactive web-based drag-and-drop version, embed an [H5P Image Hotspot / Drag the Words](https://h5p.org/) activity into your built site.)*
+:::::::::::::::
 
 ---
 
