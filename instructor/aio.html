@@ -579,8 +579,10 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>What makes a device networkable?</li>
-<li>How can we interact with networkable devices?</li>
+<li>“What hardware components make a device capable of networking?”</li>
+<li>“How do we physically assemble and boot a Raspberry Pi?”</li>
+<li>“What is the difference between regular user commands and
+administrative (<code>sudo</code>) commands?”</li>
 </ul>
 </div>
 </div>
@@ -593,6 +595,8 @@ any links that you are not going to use.
 <li>name the essential components of a networkable device</li>
 <li>connect up peripherals to a networkable device</li>
 <li>log in to a console on the device</li>
+<li>explain the difference between standard user, root user and
+sudo</li>
 </ul>
 </div>
 </div>
@@ -602,22 +606,181 @@ any links that you are not going to use.
 <section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
 <hr class="half-width">
-<div id="discussion1" class="callout discussion">
+<p>A <strong>networkable device</strong> is any computing hardware
+containing a processor, memory, an operating system, and a Network
+Interface Card (NIC)—either wired (Ethernet) or wireless (Wi-Fi)—that
+enables it to send and receive data according to standard communication
+protocols.</p>
+</section><section><h2 class="section-heading" id="anatomy-of-a-networkable-device">Anatomy of a Networkable Device<a class="anchor" aria-label="anchor" href="#anatomy-of-a-networkable-device"></a>
+</h2>
+<hr class="half-width">
+<p>[ 1: Ethernet Port ] [ 2: USB Ports ] | | +————+———————+—-+ | [ETH]
+[USB] | | [USB] | | +———+ +———+ | | | 3: CPU/ | | 4: RAM | | | | SoC |
++———+ | | +———+ | | | | [PWR] [HDMI] [SD] | +—+———-+——————–+—+ | | | [
+5: Power ] [ 6: Micro-HDMI ] [ 7: MicroSD Slot ]</p>
+<ul>
+<li>
+<strong>System on Chip (SoC) / CPU:</strong> The central engine
+executing instructions.</li>
+<li>
+<strong>RAM (Memory):</strong> Volatile workspace holding active
+network packets, OS routines, and running programs.</li>
+<li>
+<strong>MicroSD Card Slot (Storage):</strong> Non-volatile storage
+containing the operating system (Raspberry Pi OS) and file system.</li>
+<li>
+<strong>Network Interfaces (Ethernet / Wi-Fi chip):</strong> The
+physical controllers converting software messages into electrical
+signals or radio frequencies.</li>
+<li>
+<strong>USB &amp; Display Ports (I/O):</strong> Input/Output
+interfaces allowing human interaction via keyboard, mouse, and
+monitor.</li>
+</ul>
+<div id="match-the-components" class="callout challenge">
 <div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+<i class="callout-icon" data-feather="zap"></i>
 </div>
-<span class="callout-header">Discussion</span>
-<div class="callout-inner">
-<h3 class="callout-title">Challenge</h3>
+<span class="callout-header">Challenge</span>
+<div id="match-the-components" class="callout-inner">
+<h3 class="callout-title">Match the Components</h3>
 <div class="callout-content">
-<p>Drag and drop labels on to a diagram - Have a diagram with numbers in
-the place of the components - Have a list of words (more words than
-necessary to stretch) - learners match words from the list with numbers
-- (this would be nice as a digital interactive exercise if an
-appropriate platform is available)</p>
+<figure><img src="../fig/networkable_device_pic.jpeg" alt="Line art diagram showing a central board with a processing chip and storage module, along with ports for networking, power and screena nd keyboard peripherals." class="figure mx-auto d-block"><div class="figcaption">Diagram of a generic networkable device</div>
+</figure><p>Match the numbered markers on the board layout above to the correct
+component name from the word bank below.</p>
 </div>
 </div>
 </div>
+<div id="accordionHint1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
+  <h4 class="accordion-header" id="headingHint1"> Give me a hint </h4>
+</button>
+<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
+<div class="accordion-body">
+<p>The word bank contains more terms than needed.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="match-the-components" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="match-the-components" class="callout-inner">
+<h3 class="callout-title">Match the Components<em> (continued)</em>
+</h3>
+<div class="callout-content">
+<p><em>Bonus: Is the component absolutely necessary for a networkable
+device?</em></p>
+<p><strong>Word Bank:</strong> * Storage * Network Interface * Keyboard
+* Power Cable * Processing Unit (CPU) * PCIe x16 Slot * Network Cable *
+VGA Port * RAM * USB 2.0/3.0 Ports * Screen * Power Source</p>
+</div>
+</div>
+</div>
+<div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
+  <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
+</button>
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div class="accordion-body">
+<p><em>(Tip for instructors: For an interactive web-based drag-and-drop
+version, embed an <a href="https://h5p.org/" class="external-link">H5P Image Hotspot / Drag
+the Words</a> activity into your built site.)</em></p>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div class="accordion-body">
+<ol style="list-style-type: decimal">
+<li>Storage - necessary</li>
+<li>Processing Unit (CPU) - necessary</li>
+<li>Network Interface - necessary</li>
+<li>Power Source - necessary</li>
+<li>Keyboard - unnecessary</li>
+<li>Network Cable - unnecessary</li>
+<li>Power Cable - unnecessary if there is internal power</li>
+<li>Screen - unnecessary</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<hr></section><section><h2 class="section-heading" id="assembling-the-hardware">Assembling the Hardware<a class="anchor" aria-label="anchor" href="#assembling-the-hardware"></a>
+</h2>
+<hr class="half-width">
+<p>Connecting peripherals establishes communication buses between
+external input/output devices and the processor before boot
+initialisation.</p>
+<ol style="list-style-type: decimal">
+<li>
+<strong>Insert Storage:</strong> Slide the flashed MicroSD card into
+the slot under the board.
+<ul>
+<li>
+<em>Under the hood:</em> The board has no onboard hard drive; the
+bootloader looks directly to this card for the kernel.</li>
+</ul>
+</li>
+<li>
+<strong>Connect Display:</strong> Plug the Micro-HDMI cable into
+port <strong>HDMI0</strong> (closest to the power jack) and connect the
+other end to your monitor.
+<ul>
+<li>
+<em>Under the hood:</em> HDMI transmits uncompressed digital video
+and audio clocks directly from the GPU.</li>
+</ul>
+</li>
+<li>
+<strong>Connect Input:</strong> Plug the USB keyboard into any
+standard USB port.
+<ul>
+<li>
+<em>Under the hood:</em> The USB controller periodically polls the
+keyboard for scan-codes generated by keypresses.</li>
+</ul>
+</li>
+<li>
+<strong>Apply Power:</strong> Connect the official 5V USB-C power
+supply <em>last</em>.
+<ul>
+<li>
+<em>Under the hood:</em> Supplying power triggers the hardware
+power-on sequence: the GPU initializes, loads <code>bootcode.bin</code>
+from the SD card, initializes the CPU, and loads the Linux kernel into
+RAM.</li>
+</ul>
+</li>
+</ol>
+<hr></section><section><h2 class="section-heading" id="first-login-and-permission-levels">First Login and Permission Levels<a class="anchor" aria-label="anchor" href="#first-login-and-permission-levels"></a>
+</h2>
+<hr class="half-width">
+<p>Once booted, the display presents a terminal console or graphical
+desktop prompting for credentials.</p>
+<p>```bash Raspberry Pi OS (GNU/Linux) raspberrypi login: pi Password:
+Linux raspberrypi 6.1.0 #1 SMP Debian <a href="mailto:pi@raspberrypi" class="email">pi@raspberrypi</a>:~ $</p>
+</section><section><h2 class="section-heading" id="standard-user-vs--superuser-sudo">Standard User vs. Superuser (sudo)<a class="anchor" aria-label="anchor" href="#standard-user-vs--superuser-sudo"></a>
+</h2>
+<hr class="half-width">
+<p>Linux maintains strict boundaries between normal computing tasks and
+administrative modifications: Standard User (pi): Can create files in
+their own home directory (/home/pi), run networking diagnostic utilities
+(ping, curl), and launch standard software. Cannot modify underlying
+network interfaces or system routing tables. Superuser (root): The
+absolute administrator who can change IP assignments, start/stop network
+daemons, edit firewall rules, and install system packages. sudo
+(SuperUser DO): A prefix placed before a command granting temporary root
+privileges to authorized users (e.g., sudo apt update).</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -746,7 +909,7 @@ any links that you are not going to use.
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
 <div class="accordion-body">
 <p>only visible to instructors. appear inline are aggregated into the
 bottom part of instructor notes for the lesson.</p>
@@ -771,7 +934,7 @@ bottom part of instructor notes for the lesson.</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1"> Give me a hint </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
 <div class="accordion-body">
 <p>a hint here</p>
 </div>
@@ -783,7 +946,7 @@ bottom part of instructor notes for the lesson.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>the answer</p>
 </div>
